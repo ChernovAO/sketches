@@ -30,6 +30,7 @@
 # solutions files
 *.sdf
 *.suo
+*.opensdf
 
 # props in subfolders
 /cpp/allocators/**/*.props
