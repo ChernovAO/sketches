@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "allocators", "..\allocators\allocators.vcxproj", "{4A3DFAF6-2F2E-4B7B-8E93-9CFA1C0C8FF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		vc90_Debug|Win32 = vc90_Debug|Win32
+		vc90_Release|Win32 = vc90_Release|Win32
+		vc90_Debug|Win32 = vc90_Debug|Win32
+		vc90_Release|Win32 = vc90_Release|Win32
+		vc120_Debug|Win32 = vc120_Debug|Win32
+		vc120_Release|Win32 = vc120_Release|Win32
+		vc120_Debug|Win32 = vc120_Debug|Win32
+		vc120_Release|Win32 = vc120_Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A3DFAF6-2F2E-4B7B-8E93-9CFA1C0C8FF8}.vc90_Debug|Win32.ActiveCfg = vc90_Debug|Win32
+		{4A3DFAF6-2F2E-4B7B-8E93-9CFA1C0C8FF8}.vc90_Debug|Win32.Build.0 = vc90_Debug|Win32
+		{4A3DFAF6-2F2E-4B7B-8E93-9CFA1C0C8FF8}.vc90_Release|Win32.ActiveCfg = vc90_Release|Win32
+		{4A3DFAF6-2F2E-4B7B-8E93-9CFA1C0C8FF8}.vc90_Release|Win32.Build.0 = vc90_Release|Win32
+		{4A3DFAF6-2F2E-4B7B-8E93-9CFA1C0C8FF8}.vc120_Debug|Win32.ActiveCfg = vc120_Debug|Win32
+		{4A3DFAF6-2F2E-4B7B-8E93-9CFA1C0C8FF8}.vc120_Debug|Win32.Build.0 = vc120_Debug|Win32
+		{4A3DFAF6-2F2E-4B7B-8E93-9CFA1C0C8FF8}.vc120_Release|Win32.ActiveCfg = vc120_Release|Win32
+		{4A3DFAF6-2F2E-4B7B-8E93-9CFA1C0C8FF8}.vc120_Release|Win32.Build.0 = vc120_Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
