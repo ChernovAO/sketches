@@ -7,8 +7,7 @@ namespace allocators
 {
 
 template<class _Ty>
-class MyAllocator
-     : public std::_Allocator_base<_Ty>
+class MyAllocator : public std::_Allocator_base<_Ty>
 {	// generic allocator for objects of class _Ty
 public:
      typedef std::allocator<_Ty> other;
@@ -27,9 +26,9 @@ public:
      typedef size_t size_type;
      typedef ptrdiff_t difference_type;
 
-     typedef false_type propagate_on_container_copy_assignment;
-     typedef false_type propagate_on_container_move_assignment;
-     typedef false_type propagate_on_container_swap;
+     typedef std::false_type propagate_on_container_copy_assignment;
+     typedef std::false_type propagate_on_container_move_assignment;
+     typedef std::false_type propagate_on_container_swap;
 
      MyAllocator<_Ty> select_on_container_copy_construction() const
      { // return this allocator
@@ -76,6 +75,13 @@ public:
 
      void deallocate(pointer _Ptr, size_type size )
      {
+          //_Ty null = { 0 };
+          //volatile _Ty* p = _Ptr;
+          //for ( size_t index = 0; index < size; ++index )
+          //{
+          //     p[ index ] = null;
+          //}
+
           // deallocate object at _Ptr, ignore size
           allocator_.deallocate( _Ptr, size );
      }
@@ -107,7 +113,7 @@ public:
      template<class _Objty, class... _Types>
      void construct(_Objty *_Ptr, _Types&&... _Args)
      {
-          allocator_.construct( _Ptr, _Args );
+          allocator_.construct( _Ptr, std::forward< _Types >( _Args ) ... );
      }
 
      template<class _Uty>

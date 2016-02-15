@@ -38,3 +38,6 @@
 
 # tlog
 *.tlog
+
+# preprocessor work 
+*.i
