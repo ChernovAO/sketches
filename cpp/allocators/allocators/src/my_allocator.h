@@ -6,9 +6,10 @@
 namespace allocators
 {
 
+// generic allocator for objects of class _Ty
 template<class _Ty>
 class MyAllocator : public std::_Allocator_base<_Ty>
-{	// generic allocator for objects of class _Ty
+{
 public:
      typedef std::allocator<_Ty> other;
 
@@ -75,13 +76,7 @@ public:
 
      void deallocate(pointer _Ptr, size_type size )
      {
-          //_Ty null = { 0 };
-          //volatile _Ty* p = _Ptr;
-          //for ( size_t index = 0; index < size; ++index )
-          //{
-          //     p[ index ] = null;
-          //}
-
+          MyZeroMemory< _Ty >( _Ptr, size );
           // deallocate object at _Ptr, ignore size
           allocator_.deallocate( _Ptr, size );
      }
@@ -132,5 +127,22 @@ public:
 private:
      std::allocator< _Ty > allocator_;
 };
+
+template < class _Ty >
+void MyZeroMemory( typename MyAllocator< _Ty >::pointer _ptr, typename MyAllocator< _Ty >::size_type size )
+{
+}
+
+/// non empty specification for unsigned char
+template <>
+void MyZeroMemory< unsigned char >( MyAllocator< unsigned char >::pointer _ptr, MyAllocator< unsigned char >::size_type size )
+{
+     unsigned char nullValue = { 0 };
+     volatile unsigned char* p = _ptr;
+     for ( MyAllocator< unsigned char >::size_type index = 0; index < size; ++index )
+     {
+          p[ index ] = nullValue;
+     }
+}
 
 }
