@@ -41,3 +41,5 @@
 
 # preprocessor work 
 *.i
+*.VC.db
+*.idb
