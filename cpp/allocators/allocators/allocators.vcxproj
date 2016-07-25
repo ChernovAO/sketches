@@ -75,6 +75,7 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClInclude Include="src\my_allocator.h" />
+    <ClInclude Include="src\my_vector.h" />
     <ClInclude Include="src\precompiled.h" />
   </ItemGroup>
   <ItemGroup>

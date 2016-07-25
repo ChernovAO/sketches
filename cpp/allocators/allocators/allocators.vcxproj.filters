@@ -12,6 +12,9 @@
     <ClInclude Include="src\my_allocator.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\my_vector.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\precompiled.cpp">

@@ -1,9 +1,12 @@
 /// @file
-/// @brief precompiled headers
+/// @brief My allocator for tests allocator redefinition.
+
+#ifndef __MY_ALLOCATOR_H_15_02_2016_1655__
+#define __MY_ALLOCATOR_H_15_02_2016_1655__
 
 #include <memory>
 
-namespace allocators
+namespace details
 {
 
 // generic allocator for objects of class _Ty
@@ -76,7 +79,10 @@ public:
 
      void deallocate(pointer _Ptr, size_type size )
      {
-          MyZeroMemory< _Ty >( _Ptr, size );
+          //MyZeroMemory< _Ty >( _Ptr, size );
+
+          //_Ty nullVal = { 0 };
+
           // deallocate object at _Ptr, ignore size
           allocator_.deallocate( _Ptr, size );
      }
@@ -128,21 +134,23 @@ private:
      std::allocator< _Ty > allocator_;
 };
 
-template < class _Ty >
-void MyZeroMemory( typename MyAllocator< _Ty >::pointer _ptr, typename MyAllocator< _Ty >::size_type size )
-{
-}
+//template < class _Ty >
+//void MyZeroMemory( typename MyAllocator< _Ty >::pointer _ptr, typename MyAllocator< _Ty >::size_type size )
+//{
+//}
 
 /// non empty specification for unsigned char
-template <>
-void MyZeroMemory< unsigned char >( MyAllocator< unsigned char >::pointer _ptr, MyAllocator< unsigned char >::size_type size )
-{
-     unsigned char nullValue = { 0 };
-     volatile unsigned char* p = _ptr;
-     for ( MyAllocator< unsigned char >::size_type index = 0; index < size; ++index )
-     {
-          p[ index ] = nullValue;
-     }
-}
+//template <>
+//void MyZeroMemory< unsigned char >( MyAllocator< unsigned char >::pointer _ptr, MyAllocator< unsigned char >::size_type size )
+//{
+//     unsigned char nullValue = { 0 };
+//     volatile unsigned char* p = _ptr;
+//     for ( MyAllocator< unsigned char >::size_type index = 0; index < size; ++index )
+//     {
+//          p[ index ] = nullValue;
+//     }
+//}
 
 }
+
+#endif // !__MY_ALLOCATOR_H_15_02_2016_1655__
