@@ -4,7 +4,7 @@ MODULE = boost_program_options
 CC = g++
 
 CFLAGS = -std=c++11
-LFLAGS = 
+LFLAGS = -lboost_program_options
 
 RESULT_DIR = _result
 SOURCE = $(MODULE).cpp
