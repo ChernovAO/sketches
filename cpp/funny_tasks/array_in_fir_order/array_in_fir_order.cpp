@@ -13,18 +13,14 @@ void reorder_in_place( std::vector< int >& to_reorder )
         {
             if ( to_reorder[i - 1] > to_reorder[i] )
             {
-                int tmp = to_reorder[i-1];
-                to_reorder[i-1] = to_reorder[i];
-                to_reorder[i] = tmp;
+                std::swap(to_reorder[i-1], to_reorder[i]);
             }
         }
         else
         {
             if ( to_reorder[i-1] < to_reorder[i] )
             {
-                int tmp = to_reorder[i-1];
-                to_reorder[i-1] = to_reorder[i];
-                to_reorder[i] = tmp;
+                std::swap(to_reorder[i-1], to_reorder[i]);
             }
         }
     }
