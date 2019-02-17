@@ -1,2 +1,10 @@
 _result/
 build
+**/packages/**
+**/Debug/**
+**/Release/**
+*.suo
+*.opendb
+*.db
+*.user
+
