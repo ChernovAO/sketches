@@ -20,7 +20,7 @@ std::vector<int> get_data(const std::filesystem::path& data_source)
         if (source.good())
         {
             result.push_back(tmp);
-            std::cout << "read: " << tmp << std::endl;
+//            std::cout << "read: " << tmp << std::endl;
         }
         else
         {
@@ -51,18 +51,21 @@ int main(int argc, char** argv)
     std::set<int> frequencies;
     frequencies.insert(0);
     int frequency = 0;
-    for (const auto item : data)
+    for(;;)
     {
-        std::cout << "f: " << frequency << " i: " << item << std::endl;
-        frequency += item;
-        const auto it = frequencies.insert(frequency);
-        if (not it.second)
+        for (const auto item : data)
         {
-            std::cout << "Result: " << frequency << std::endl;
-            return 0;
+//            std::cout << "f: " << frequency << " i: " << item << std::endl;
+            frequency += item;
+            const auto it = frequencies.insert(frequency);
+            if (not it.second)
+            {
+                std::cout << "Result: " << frequency << std::endl;
+                return 0;
+            }
         }
     }
 
-    std::cout << "Resulti wasn't finded. Last frequency is: " << frequency << std::endl;
+//    std::cout << "Resulti wasn't finded. Last frequency is: " << frequency << std::endl;
     return 0;
 }
