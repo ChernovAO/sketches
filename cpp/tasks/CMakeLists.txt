@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 
+project(tasks)
+
 enable_testing()
 
 # Download and unpack googletest at configure time
@@ -35,6 +37,6 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(example example.cpp)
-target_link_libraries(example gtest_main)
-add_test(NAME example_test COMMAND example)
+# add_executable(example example.cpp)
+# target_link_libraries(example gtest_main)
+# add_test(NAME example_test COMMAND example)
