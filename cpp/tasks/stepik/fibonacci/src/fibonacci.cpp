@@ -1,5 +1,4 @@
-#include "stdafx.h"
-#include "fibonacci.h"
+#include "fibonacci/include/fibonacci.h"
 #include <vector>
 
 int fibonacci(int n)
