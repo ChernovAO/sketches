@@ -10,3 +10,5 @@ build
 *.user
 **/.vs/**
 CMakeSettings.json
+*.sln
+*.pyproj
