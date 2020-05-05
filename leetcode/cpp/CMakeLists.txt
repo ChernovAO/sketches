@@ -33,7 +33,7 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
                  ${CMAKE_CURRENT_BINARY_DIR}/googletest-build
                  EXCLUDE_FROM_ALL)
 
-#add_subdirectory(sketches)
+add_subdirectory(sum_of_two)
 
 # Now simply link against gtest or gtest_main as needed. Eg
 # add_executable(example example.cpp)
