@@ -12,3 +12,4 @@ build
 CMakeSettings.json
 *.sln
 *.pyproj
+**/.idea
