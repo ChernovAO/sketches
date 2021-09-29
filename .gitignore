@@ -14,3 +14,4 @@ CMakeSettings.json
 *.vcxproj*
 *.pyproj
 **/.idea
+**/.vscode
