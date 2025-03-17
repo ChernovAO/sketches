@@ -1,0 +1,21 @@
+внутри создаем папку
+[root@2d2ecd89e025 /]# mkdir -p /var/run/postgresql
+[root@2d2ecd89e025 /]# chown postgres:postgres /var/run/postgresql
+[root@2d2ecd89e025 /]# chmod 775 /var/run/postgresql
+
+после переключаемся su - postgres
+/usr/pgsql-15/bin/pg_ctl -D /var/lib/pgsql/15/data/ -l logfile start
+(стартуем сервер) 
+и убеждаемся что все хорошо 
+
+[postgres@2d2ecd89e025 ~]$ /usr/pgsql-15/bin/pg_ctl -D /var/lib/pgsql/15/data/ -l logfile start
+waiting for server to start.... done
+server started
+[postgres@2d2ecd89e025 ~]$ tail -f /var/lib/pgsql/15/data/log
+[postgres@2d2ecd89e025 ~]$ psql
+psql (15.10)
+Type "help" for help.
+postgres=# exit
+postgres-#
+
+
