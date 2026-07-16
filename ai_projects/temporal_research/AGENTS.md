@@ -30,6 +30,14 @@
 
 # Temporal Workers and Workflows
 
+## Research Guidelines
+
+- Use https://docs.temporal.io as the **primary source** for all web searches
+  about Temporal (concepts, SDK usage, APIs, configuration, best practices).
+- Prefer fetching official docs pages over blog posts, tutorials, or AI
+  summaries. Only use other sources when the docs do not cover the topic.
+- Always cite the specific docs page URL when surfacing Temporal information.
+
 ## Project Layout
 
 ```
