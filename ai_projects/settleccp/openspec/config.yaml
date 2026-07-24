@@ -1,0 +1,54 @@
+schema: spec-driven
+
+context: |
+  SettleCCP is composed of three applications:
+
+  - settleconsole: A TypeScript and React frontend that provides the user
+    interface for settlement operations. It sends user commands to settlecore
+    and displays state returned by settlecore. It must not communicate with
+    clearingflow directly or contain settlement calculation logic.
+
+  - settlecore: A Python backend serving settleconsole. It owns the API boundary,
+    validates and translates UI requests, and routes commands to clearingflow
+    through Temporal signals. It obtains workflow state through Temporal queries
+    and exposes the relevant results to settleconsole. It must not duplicate the
+    settlement calculation logic owned by clearingflow.
+
+  - clearingflow: A Python Temporal application implementing settlement
+    calculation logic. It contains the Temporal worker, workflows, and
+    activities. Workflows coordinate durable settlement execution, signals
+    accept commands from settlecore, queries expose workflow state, and
+    activities perform external I/O or non-deterministic operations.
+
+  Communication flow:
+  settleconsole -> settlecore -> Temporal signals/queries -> clearingflow.
+
+  Architecture constraints:
+  - Keep application boundaries explicit and avoid cross-application business
+    logic duplication.
+  - Treat signal payloads, query results, and frontend/backend API payloads as
+    versioned contracts.
+  - Keep Temporal workflow code deterministic. Place network calls, database
+    access, clock-dependent behavior, and other side effects in activities.
+  - Design commands to be safe under retries and duplicate delivery where
+    applicable.
+  - Describe failure handling, timeouts, retries, and observable workflow state
+    for operations that cross application or Temporal boundaries.
+
+rules:
+  proposal:
+    - Identify which of settleconsole, settlecore, and clearingflow are affected.
+    - Describe any changes to API, Temporal signal, or Temporal query contracts.
+    - Include non-goals and operational risks for cross-application changes.
+  design:
+    - Document the end-to-end command and state flow across application boundaries.
+    - Preserve Temporal workflow determinism and assign side effects to activities.
+    - Address idempotency, retries, timeouts, error propagation, and observability.
+  specs:
+    - Use testable requirements and scenarios with explicit inputs and outcomes.
+    - State the owning application for each capability and contract.
+    - Cover success, validation failure, duplicate command, and downstream failure scenarios where applicable.
+  tasks:
+    - Group implementation tasks by application.
+    - Include contract changes before their consumers and producers.
+    - Include unit, integration, and end-to-end verification appropriate to each affected boundary.
