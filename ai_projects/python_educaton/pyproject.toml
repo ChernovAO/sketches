@@ -1,0 +1,17 @@
+[project]
+name = "python-educaton"
+version = "0.1.0"
+description = "Education project. I want to improve my python skill."
+readme = "README.md"
+authors = [gmail.com
+    { name = "ChernovAO", email = "chernov.aleksandre@yandex.ru" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+python-educaton = "python_educaton:main"
+
+[build-system]
+requires = ["uv_build>=0.12.6,<0.13.0"]
+build-backend = "uv_build"
