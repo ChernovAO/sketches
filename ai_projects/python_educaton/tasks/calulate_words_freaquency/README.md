@@ -1,0 +1,2 @@
+1. Write a script that reads a large text file, counts the frequency of every word, and prints the top 10 most common words.
+2. The Catch: Do it using Python's built-in collections.Counter and try to do it in under 5 lines of actual logic.

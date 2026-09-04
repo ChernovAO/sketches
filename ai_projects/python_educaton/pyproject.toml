@@ -3,10 +3,10 @@ name = "python-educaton"
 version = "0.1.0"
 description = "Education project. I want to improve my python skill."
 readme = "README.md"
-authors = [gmail.com
+authors = [
     { name = "ChernovAO", email = "chernov.aleksandre@yandex.ru" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = []
 
 [project.scripts]
@@ -15,3 +15,18 @@ python-educaton = "python_educaton:main"
 [build-system]
 requires = ["uv_build>=0.12.6,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.workspace]
+members = [
+    "tasks/calulate_words_freaquency",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "G"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+mypy_path = [
+    "tasks/calulate_words_freaquency/src"
+]

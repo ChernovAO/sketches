@@ -1,0 +1,19 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[manifest]
+members = [
+    "calulate-words-freaquency",
+    "python-educaton",
+]
+
+[[package]]
+name = "calulate-words-freaquency"
+version = "0.1.0"
+source = { editable = "tasks/calulate_words_freaquency" }
+
+[[package]]
+name = "python-educaton"
+version = "0.1.0"
+source = { editable = "." }
