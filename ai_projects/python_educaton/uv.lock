@@ -6,6 +6,7 @@ requires-python = ">=3.12"
 members = [
     "calulate-words-freaquency",
     "python-educaton",
+    "streaming-log-analyzer",
 ]
 
 [[package]]
@@ -17,3 +18,8 @@ source = { editable = "tasks/calulate_words_freaquency" }
 name = "python-educaton"
 version = "0.1.0"
 source = { editable = "." }
+
+[[package]]
+name = "streaming-log-analyzer"
+version = "0.1.0"
+source = { editable = "tasks/streaming_log_analyzer" }

@@ -19,6 +19,7 @@ build-backend = "uv_build"
 [tool.uv.workspace]
 members = [
     "tasks/calulate_words_freaquency",
+    "tasks/streaming_log_analyzer",
 ]
 
 [tool.ruff.lint]
@@ -28,5 +29,6 @@ select = ["E", "F", "I", "N", "W", "UP", "G"]
 python_version = "3.12"
 strict = true
 mypy_path = [
-    "tasks/calulate_words_freaquency/src"
+    "tasks/calulate_words_freaquency/src",
+    "tasks/streaming_log_analyzer/src"
 ]
