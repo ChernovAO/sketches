@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "skills": {
+    "paths": ["tool/ai/skills"]
+  },
+  "command": {
+    "precommit-review": {
+      "description": "Review C++ changes before committing using the staged-first review skill",
+      "template": "{file:tool/ai/commands/precommit-review.md}"
+    }
+  }
+}
